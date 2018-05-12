@@ -9,17 +9,20 @@ const paths = {
 };
 
 module.exports = {
-  entry: [path.join(paths.src, "index.js"), "preact"],
+  mode: devMode ? "development" : "production",
+  entry: {
+    main: path.join(paths.src, "index.js"),
+    vendors: ["preact"]
+  },
   output: {
-    filename: devMode === true ? "js/[name].js" : "js/[name].[chunkhash:8].js",
+    filename: devMode ? "js/[name].js" : "js/[name].[chunkhash:8].js",
     path: paths.dist,
     publicPath: "/"
   },
   resolve: {
     alias: {
       "react": "preact-compat",
-      "react-dom": "preact-compat",
-      "create-react-class": "preact-compat/lib/create-react-class"
+      "react-dom": "preact-compat"
     }
   },
   module: {
@@ -33,6 +36,15 @@ module.exports = {
       }
     ]
   },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        test: /[\\/]node_modules[\\/]/i,
+        name: "commons",
+        chunks: "all"
+      }
+    }
+  },
   plugins: [
     new CleanWebpackPlugin(paths.dist),
     new HtmlWebpackPlugin({
@@ -41,10 +53,10 @@ module.exports = {
       inject: true,
       hash: false,
       minify: {
-        removeComments: devMode === true ? false : true,
-        collapseWhitespace: devMode === true ? false : true,
-        minifyJS: devMode === true ? false : true,
-        minifyCSS: devMode === true ? false : true
+        removeComments: devMode ? false : true,
+        collapseWhitespace: devMode ? false : true,
+        minifyJS: devMode ? false : true,
+        minifyCSS: devMode ? false : true
       }
     }),
     new CopyWebpackPlugin([{

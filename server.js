@@ -1,9 +1,11 @@
 const path = require("path");
 const express = require("express");
+const compression = require("compression");
 const app = express();
 const webroot = path.join(__dirname, "dist");
 const pedals = require("./api/pedals.json");
 
+app.use(compression());
 app.use(express.static(webroot));
 app.listen(8080);
 
