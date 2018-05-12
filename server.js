@@ -11,26 +11,26 @@ app.listen(8080);
 
 app.get("/api/search/:query", (req, res) => {
   let clean = {};
-  let query = decodeURI(req.params.query);
+  let query = decodeURI(req.params.query.toLowerCase());
 
   if (/^[a-z0-9\!\@\#\$\%\^\&\*\)\(\+\=\.\_\-\? ]+$/ig.test(query) === true) {
     let results = {};
     clean.query = query;
 
-    if (clean.query === "*") {
+    if (clean.query === "*" || clean.query === "all") {
       results = pedals;
     } else {
       for (let pedal in pedals) {
         let pedalEntry = pedals[pedal];
         let manufacturer = pedalEntry.manufacturer.toLowerCase();
-        let model = pedalEntry.manufacturer.toLowerCase();
+        let model = pedalEntry.model.toLowerCase();
         let type = pedalEntry.type.toLowerCase();
         let productString = `${manufacturer} ${model}`;
 
         if (productString.indexOf(clean.query) !== -1) {
           results[pedal] = pedalEntry;
         } else {
-          if (manufacturer.indexOf(clean.query) !== -1 || manufacturer.indexOf(clean.query) !== -1 || type.indexOf(clean.query) !== -1) {
+          if (manufacturer.indexOf(clean.query) !== -1 || model.indexOf(clean.query) !== -1 || type.indexOf(clean.query) !== -1) {
             results[pedal] = pedalEntry;
           }
         }

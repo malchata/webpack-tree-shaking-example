@@ -1,6 +1,6 @@
 import regeneratorRuntime from "regenerator-runtime";
 import { h, render, Component } from "preact";
-import { SearchLabel, SearchInputContainer, SearchInput, SearchSubmit, SortContainer, SortLabel, SortSelect, Separator, PedalList, Pedal, PedalImage, PedalName, PedalType } from "./FilterablePedalList.css";
+import { SearchLabel, SearchInputContainer, SearchInput, SearchSubmit, SortContainer, SortLabel, SortSelectContainer, SortSelect, Separator, PedalList, Pedal, PedalImage, PedalName, PedalType } from "./FilterablePedalList.css";
 import _ from "lodash";
 
 export default class FilterablePedalList extends Component {
@@ -80,17 +80,19 @@ export default class FilterablePedalList extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <SearchLabel for="query">Search effect pedals:</SearchLabel>
+          <SearchLabel for="query"><strong>STOMP</strong>LIST</SearchLabel>
           <SearchInputContainer>
-            <SearchInput type="text" placeholder="Search by make (e.g., BOSS) or model (e.g., CE-2)" onChange={this.handleChange} id="query"/>
+            <SearchInput type="text" placeholder="Search effect pedals" onChange={this.handleChange} id="query"/>
             <SearchSubmit type="submit" value="Go"/>
             <SortContainer>
               <SortLabel for="sortBy">Sort by: </SortLabel>
-              <SortSelect id="sortBy" onChange={this.handleSort}>
-                <option value="manufacturer">Manufacturer</option>
-                <option value="model">Model</option>
-                <option value="type">Type</option>
-              </SortSelect>
+              <SortSelectContainer>
+                <SortSelect id="sortBy" onChange={this.handleSort}>
+                  <option value="manufacturer">Manufacturer</option>
+                  <option value="model">Model</option>
+                  <option value="type">Type</option>
+                </SortSelect>
+              </SortSelectContainer>
             </SortContainer>
           </SearchInputContainer>
         </form>
