@@ -1,0 +1,302 @@
+{
+  "0": {
+    "id": 0,
+    "manufacturer": "BOSS",
+    "model": "CE-2",
+    "type": "Chorus"
+  },
+  "1": {
+    "id": 1,
+    "manufacturer": "BOSS",
+    "model": "DM-2",
+    "type": "Analog Delay"
+  },
+  "2": {
+    "id": 2,
+    "manufacturer": "MXR",
+    "model": "Phase 100",
+    "type": "Phaser"
+  },
+  "3": {
+    "id": 3,
+    "manufacturer": "Maxon",
+    "model": "AD-900",
+    "type": "Analog Delay"
+  },
+  "4": {
+    "id": 4,
+    "manufacturer": "Fulltone",
+    "model": "Supa-Trem ST-1",
+    "type": "Tremolo"
+  },
+  "5": {
+    "id": 5,
+    "manufacturer": "BOSS",
+    "model": "TU-3S Tuner",
+    "type": "Tuner"
+  },
+  "6": {
+    "id": 6,
+    "manufacturer": "MXR",
+    "model": "Custom Comp",
+    "type": "Compressor"
+  },
+  "7": {
+    "id": 7,
+    "manufacturer": "MXR",
+    "model": "Fullbore Metal",
+    "type": "Distortion"
+  },
+  "8": {
+    "id": 8,
+    "manufacturer": "BYOC",
+    "model": "Analog Chorus",
+    "type": "Chorus"
+  },
+  "9": {
+    "id": 9,
+    "manufacturer": "BOSS",
+    "model": "DS-1",
+    "type": "Distortion"
+  },
+  "10": {
+    "id": 10,
+    "manufacturer": "BOSS",
+    "model": "MD-2 Mega Distortion",
+    "type": "Distortion"
+  },
+  "11": {
+    "id": 11,
+    "manufacturer": "Electro Harmonix",
+    "model": "Micro POG",
+    "type": "Octaver"
+  },
+  "12": {
+    "id": 12,
+    "manufacturer": "Maxon",
+    "model": "SD-9 Sonic Distortion",
+    "type": "Distortion"
+  },
+  "13": {
+    "id": 13,
+    "manufacturer": "Maxon",
+    "model": "OD-808 Reissue",
+    "type": "Overdrive"
+  },
+  "14": {
+    "id": 14,
+    "manufacturer": "BOSS",
+    "model": "SG-1 Slow Gear",
+    "type": "Volume"
+  },
+  "15": {
+    "id": 15,
+    "manufacturer": "BOSS",
+    "model": "DD-3",
+    "type": "Digital Delay"
+  },
+  "16": {
+    "id": 16,
+    "manufacturer": "ZVEX",
+    "model": "Fuzz Factory",
+    "type": "Fuzz"
+  },
+  "17": {
+    "id": 17,
+    "manufacturer": "Electro Harmonix",
+    "model": "Frequency Analyzer",
+    "type": "Ring Modulator"
+  },
+  "18": {
+    "id": 18,
+    "manufacturer": "BOSS",
+    "model": "PH-1r",
+    "type": "Phaser"
+  },
+  "19": {
+    "id": 19,
+    "manufacturer": "Electro Harmonix",
+    "model": "Big Muff Pi",
+    "type": "Overdrive"
+  },
+  "20": {
+    "id": 20,
+    "manufacturer": "Electro Harmonix",
+    "model": "Tube EQ",
+    "type": "Equalizer"
+  },
+  "21": {
+    "id": 21,
+    "manufacturer": "BOSS",
+    "model": "VB-2",
+    "type": "Vibrato"
+  },
+  "22": {
+    "id": 22,
+    "manufacturer": "Strymon",
+    "model": "Big Sky",
+    "type": "Reverb"
+  },
+  "23": {
+    "id": 23,
+    "manufacturer": "Behringer",
+    "model": "RV600 Reverb Machine",
+    "type": "Reverb"
+  },
+  "24": {
+    "id": 24,
+    "manufacturer": "Ibanez",
+    "model": "LF7 Lo-Fi",
+    "type": "Filter"
+  },
+  "25": {
+    "id": 25,
+    "manufacturer": "Ibanez",
+    "model": "Mini Chorus",
+    "type": "Chorus"
+  },
+  "26": {
+    "id": 26,
+    "manufacturer": "Ibanez",
+    "model": "Tube Screamer TS808",
+    "type": "Overdrive"
+  },
+  "27": {
+    "id": 27,
+    "manufacturer": "Fulltone",
+    "model": "OCD",
+    "type": "Overdrive"
+  },
+  "28": {
+    "id": 28,
+    "manufacturer": "Electro Harmonix",
+    "model": "Pulsar",
+    "type": "Tremolo"
+  },
+  "29": {
+    "id": 29,
+    "manufacturer": "MXR",
+    "model": "Carbon Copy",
+    "type": "Analog Delay"
+  },
+  "30": {
+    "id": 30,
+    "manufacturer": "BOSS",
+    "model": "FZ-5",
+    "type": "Fuzz"
+  },
+  "31": {
+    "id": 31,
+    "manufacturer": "Talent",
+    "model": "GT-OD Overkill",
+    "type": "Overdrive"
+  },
+  "32": {
+    "id": 32,
+    "manufacturer": "TC Electronic",
+    "model": "HyperGravity",
+    "type": "Compressor"
+  },
+  "33": {
+    "id": 33,
+    "manufacturer": "BOSS",
+    "model": "CS-1 Compression Sustainer",
+    "type": "Compressor"
+  },
+  "34": {
+    "id": 34,
+    "manufacturer": "TC Electronic",
+    "model": "Hall of Fame",
+    "type": "Reverb"
+  },
+  "35": {
+    "id": 35,
+    "manufacturer": "TC Electronic",
+    "model": "Pipeline Tap Tremolo",
+    "type": "Tremolo"
+  },
+  "36": {
+    "id": 36,
+    "manufacturer": "TC Electronic",
+    "model": "Sub 'n Up Octaver",
+    "type": "Octaver"
+  },
+  "37": {
+    "id": 37,
+    "manufacturer": "TC Electronic",
+    "model": "Ditto X4",
+    "type": "Looper"
+  },
+  "38": {
+    "id": 38,
+    "manufacturer": "BOSS",
+    "model": "DC-2 Dimension C",
+    "type": "Chorus"
+  },
+  "39": {
+    "id": 39,
+    "manufacturer": "Electro Harmonix",
+    "model": "Super Pulsar",
+    "type": "Tremolo"
+  },
+  "40": {
+    "id": 40,
+    "manufacturer": "Electro Harmonix",
+    "model": "Soul Food",
+    "type": "Overdrive"
+  },
+  "41": {
+    "id": 41,
+    "manufacturer": "Electro Harmonix",
+    "model": "Silencer",
+    "type": "Noise Gate"
+  },
+  "42": {
+    "id": 42,
+    "manufacturer": "Electro Harmonix",
+    "model": "Synth 9",
+    "type": "Synth"
+  },
+  "43": {
+    "id": 43,
+    "manufacturer": "Electro Harmonix",
+    "model": "Hum Debugger",
+    "type": "Noise Gate"
+  },
+  "44": {
+    "id": 44,
+    "manufacturer": "Electro Harmonix",
+    "model": "720",
+    "type": "Looper"
+  },
+  "45": {
+    "id": 45,
+    "manufacturer": "Electro Harmonix",
+    "model": "V256",
+    "type": "Vocoder"
+  },
+  "46": {
+    "id": 46,
+    "manufacturer": "Way Huge Electronics",
+    "model": "Swollen Pickle",
+    "type": "Fuzz"
+  },
+  "47": {
+    "id": 47,
+    "manufacturer": "Way Huge Electronics",
+    "model": "Aqua Puss",
+    "type": "Analog Delay"
+  },
+  "48": {
+    "id": 48,
+    "manufacturer": "Way Huge Electronics",
+    "model": "Red Llama",
+    "type": "Overdrive"
+  },
+  "49": {
+    "id": 49,
+    "manufacturer": "Way Huge Electronics",
+    "model": "Saffron Squeeze",
+    "type": "Compressor"
+  }
+}

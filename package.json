@@ -1,0 +1,48 @@
+{
+  "name": "webpack-tree-shaking-example",
+  "version": "1.0.0",
+  "description": "A toy app demonstrating tree shaking.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development npx webpack --mode development",
+    "build": "NODE_ENV=production npx webpack --mode production",
+    "start": "npm run build && node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/malchata/webpack-tree-shaking-example.git"
+  },
+  "keywords": [
+    "webpack",
+    "tree",
+    "shaking",
+    "example"
+  ],
+  "author": "Jeremy L. Wagner <jeremy.l.wagner@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/malchata/webpack-tree-shaking-example/issues"
+  },
+  "homepage": "https://github.com/malchata/webpack-tree-shaking-example#readme",
+  "dependencies": {
+    "autoprefixer": "^8.4.1",
+    "autorem": "^0.1.1",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.1",
+    "express": "^4.16.3",
+    "html-webpack-plugin": "^3.2.0",
+    "lodash": "^4.17.10",
+    "preact": "^8.2.9",
+    "preact-compat": "^3.18.0",
+    "regenerator-runtime": "^0.11.1",
+    "styled-components": "^3.2.6",
+    "uglifyjs-webpack-plugin": "^1.2.5",
+    "webpack": "^4.8.2",
+    "webpack-cli": "^2.1.3"
+  }
+}
