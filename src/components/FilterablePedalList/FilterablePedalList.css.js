@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled, { css } from "preact-emotion";
 
-export const SearchLabel = styled.label`
+export const SearchLabel = styled("label")`
   display: block;
   text-align: center;
   text-transform: uppercase;
@@ -17,11 +17,11 @@ export const SearchLabel = styled.label`
   }
 `;
 
-export const SearchInputContainer = styled.fieldset`
+export const SearchInputContainer = styled("fieldset")`
   position: relative;
 `;
 
-export const SearchInput = styled.input`
+export const SearchInput = styled("input")`
   display: block;
   width: 100%;
   height: 3rem;
@@ -42,7 +42,7 @@ export const SearchInput = styled.input`
   }
 `;
 
-export const SearchSubmit = styled.input`
+export const SearchSubmit = styled("input")`
   display: block;
   position: absolute;
   width: 3rem;
@@ -64,11 +64,17 @@ export const SearchSubmit = styled.input`
   }
 `;
 
-export const SortContainer = styled.div`
+export const Sort = styled("div")`
   text-align: right;
 `;
 
-export const SortLabel = styled.label`
+export const SortContainer = styled("div")`
+  display: inline-block;
+  margin: 0 0 1rem 1rem;
+  vertical-align: baseline;
+`;
+
+export const SortLabel = styled("label")`
   font-weight: 700;
   font-size: 1rem;
   text-transform: uppercase;
@@ -78,7 +84,7 @@ export const SortLabel = styled.label`
   margin: 0 .5rem 0 0;
 `;
 
-export const SortSelectContainer = styled.div`
+export const SortSelectContainer = styled("div")`
   display: inline-block;
   cursor: pointer;
   position: relative;
@@ -98,23 +104,26 @@ export const SortSelectContainer = styled.div`
   }
 `;
 
-export const SortSelect = styled.select`
-  font-size: 1.25rem;
+export const SortSelect = styled("select")`
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
   color: #f5f5f5;
   background: transparent;
-  padding: .5rem;
+  padding: .75rem;
   display: inline-block;
   vertical-align: middle;
+  cursor: pointer;
 `;
 
-export const Separator = styled.hr`
-  margin: 1rem 0;
+export const Separator = styled("hr")`
+  margin: 0 0 1rem;
   background: #016fb9;
   height: .125rem;
   border: 0;
 `;
 
-export const PedalList = styled.ul`
+export const PedalList = styled("ul")`
   width: 100%;
   max-width: 64rem;
 
@@ -133,7 +142,7 @@ export const PedalList = styled.ul`
   }
 `;
 
-export const Pedal = styled.li`
+export const Pedal = styled("li")`
   border: 1px solid #016fb9;
   text-align: center;
   padding: 0 0 .5rem;
@@ -145,13 +154,13 @@ export const Pedal = styled.li`
   }
 `;
 
-export const PedalImage = styled.img`
+export const PedalImage = styled("img")`
   width: 100%;
   display: block;
   margin: 0 0 1rem;
 `;
 
-export const PedalName = styled.h3`
+export const PedalName = styled("h3")`
   font-weight: 700;
   font-size: 1.319rem;
   line-height: 1.319;
@@ -159,7 +168,7 @@ export const PedalName = styled.h3`
   margin: 0 0 .5rem;
 `;
 
-export const PedalType = styled.h4`
+export const PedalType = styled("h4")`
   font-size: 1rem;
   line-height: 1.319;
   padding: 0 .5rem;

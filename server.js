@@ -3,9 +3,8 @@ const express = require("express");
 const compression = require("compression");
 const app = express();
 const webroot = path.join(__dirname, "dist");
-const pedals = require("./api/pedals.json");
+const pedals = require("./api/pedals.json").pedals;
 
-app.use(compression());
 app.use(express.static(webroot));
 app.listen(8080);
 
@@ -14,7 +13,7 @@ app.get("/api/search/:query", (req, res) => {
   let query = decodeURI(req.params.query.toLowerCase());
 
   if (/^[a-z0-9\!\@\#\$\%\^\&\*\)\(\+\=\.\_\-\? ]+$/ig.test(query) === true) {
-    let results = {};
+    let results = [];
     clean.query = query;
 
     if (clean.query === "*" || clean.query === "all") {
@@ -28,10 +27,10 @@ app.get("/api/search/:query", (req, res) => {
         let productString = `${manufacturer} ${model}`;
 
         if (productString.indexOf(clean.query) !== -1) {
-          results[pedal] = pedalEntry;
+          results.push(pedalEntry);
         } else {
           if (manufacturer.indexOf(clean.query) !== -1 || model.indexOf(clean.query) !== -1 || type.indexOf(clean.query) !== -1) {
-            results[pedal] = pedalEntry;
+            results.push(pedal) = pedalEntry;
           }
         }
       }

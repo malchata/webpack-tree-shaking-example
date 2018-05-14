@@ -1,7 +1,7 @@
 import regeneratorRuntime from "regenerator-runtime";
 import { h, render, Component } from "preact";
-import { SearchLabel, SearchInputContainer, SearchInput, SearchSubmit, SortContainer, SortLabel, SortSelectContainer, SortSelect, Separator, PedalList, Pedal, PedalImage, PedalName, PedalType } from "./FilterablePedalList.css";
-import _ from "lodash";
+import { SearchLabel, SearchInputContainer, SearchInput, SearchSubmit, SortContainer, Sort, SortLabel, SortSelectContainer, SortSelect, Separator, PedalList, Pedal, PedalImage, PedalName, PedalType } from "./FilterablePedalList.css";
+import { simpleSort } from "../../utils/utils";
 
 export default class FilterablePedalList extends Component {
   constructor(props) {
@@ -15,6 +15,7 @@ export default class FilterablePedalList extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSort = this.handleSort.bind(this);
+    this.handleSortOrder = this.handleSortOrder.bind(this);
   }
 
   async getPedalData() {
@@ -25,22 +26,21 @@ export default class FilterablePedalList extends Component {
       let json = await response.json();
 
       if (this.state.sortBy === "model") {
-        json = _.sortBy(json, [(o) => {return o.model;}]);
+        json = simpleSort(json, "model", this.state.sortOrder);
       } else if (this.state.sortBy === "type") {
-        json = _.sortBy(json, [(o) => {return o.type;}]);
+        json = simpleSort(json, "type", this.state.sortOrder);
       } else {
-        json = _.sortBy(json, [(o) => {return o.manufacturer;}]);
+        json = simpleSort(json, "manufacturer", this.state.sortOrder);
       }
 
       for (let entry in json) {
         let pedal = json[entry];
-        let pedalId = pedal.id;
 
         pedals.push(<Pedal>
           <picture>
-            <source srcset={`/images/${pedalId}-2x.webp 2x, /images/pedals/${pedalId}-1x.webp 1x`} type="image/webp"/>
-            <source srcset={`/images/${pedalId}-2x.jpg 2x, /images/pedals/${pedalId}-1x.jpg 1x`} type="image/jpeg"/>
-            <PedalImage src={`/images/${pedalId}-1x.jpg`} alt={`${pedal.manufacturer} ${pedal.model}`} />
+            <source srcset={`/images/${pedal.id}-2x.webp 2x, /images/pedals/${pedal.id}-1x.webp 1x`} type="image/webp"/>
+            <source srcset={`/images/${pedal.id}-2x.jpg 2x, /images/pedals/${pedal.id}-1x.jpg 1x`} type="image/jpeg"/>
+            <PedalImage src={`/images/${pedal.id}-1x.jpg`} alt={`${pedal.manufacturer} ${pedal.model}`} />
           </picture>
           <PedalName>{pedal.manufacturer} {pedal.model}</PedalName>
           <PedalType><strong>TYPE:</strong> {pedal.type}</PedalType>
@@ -63,7 +63,13 @@ export default class FilterablePedalList extends Component {
       sortBy: event.target.value
     });
 
-    console.log(this.state.sortBy);
+    this.getPedalData();
+  }
+
+  handleSortOrder(event) {
+    this.setState({
+      sortOrder: event.target.value
+    });
 
     this.getPedalData();
   }
@@ -84,16 +90,27 @@ export default class FilterablePedalList extends Component {
           <SearchInputContainer>
             <SearchInput type="text" placeholder="Search effect pedals" onChange={this.handleChange} id="query"/>
             <SearchSubmit type="submit" value="Go"/>
-            <SortContainer>
-              <SortLabel for="sortBy">Sort by: </SortLabel>
-              <SortSelectContainer>
-                <SortSelect id="sortBy" onChange={this.handleSort}>
-                  <option value="manufacturer">Manufacturer</option>
-                  <option value="model">Model</option>
-                  <option value="type">Type</option>
-                </SortSelect>
-              </SortSelectContainer>
-            </SortContainer>
+            <Sort>
+              <SortContainer>
+                <SortLabel for="sortBy">Sort by:</SortLabel>
+                <SortSelectContainer>
+                  <SortSelect id="sortBy" onChange={this.handleSort}>
+                    <option value="manufacturer">Manufacturer</option>
+                    <option value="model">Model</option>
+                    <option value="type">Type</option>
+                  </SortSelect>
+                </SortSelectContainer>
+              </SortContainer>
+              <SortContainer>
+                <SortLabel for="sortOrder">in order:</SortLabel>
+                <SortSelectContainer>
+                  <SortSelect id="sortOrder" onChange={this.handleSortOrder}>
+                    <option value="asc">Ascending</option>
+                    <option value="desc">Descending</option>
+                  </SortSelect>
+                </SortSelectContainer>
+              </SortContainer>
+            </Sort>
           </SearchInputContainer>
         </form>
         <Separator/>
