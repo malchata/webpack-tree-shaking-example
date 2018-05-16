@@ -1,6 +1,5 @@
 const path = require("path");
 const express = require("express");
-const compression = require("compression");
 const app = express();
 const webroot = path.join(__dirname, "dist");
 const pedals = require("./api/pedals.json").pedals;
@@ -30,7 +29,7 @@ app.get("/api/search/:query", (req, res) => {
           results.push(pedalEntry);
         } else {
           if (manufacturer.indexOf(clean.query) !== -1 || model.indexOf(clean.query) !== -1 || type.indexOf(clean.query) !== -1) {
-            results.push(pedal) = pedalEntry;
+            results.push(pedalEntry);
           }
         }
       }

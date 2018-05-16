@@ -30,15 +30,6 @@ let plugins = [
   }])
 ];
 
-if (devMode === false) {
-  plugins.push(new UglifyJSPlugin({
-    uglifyOptions: {
-      warnings: true,
-      ecma: 6
-    }
-  }));
-}
-
 module.exports = {
   output: {
     filename: devMode ? "js/[name].js" : "js/[name].[chunkhash:8].js",
