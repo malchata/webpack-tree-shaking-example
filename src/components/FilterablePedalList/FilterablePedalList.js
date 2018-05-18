@@ -1,7 +1,7 @@
 import regeneratorRuntime from "regenerator-runtime";
 import { h, render, Component } from "preact";
 import { SearchLabel, SearchInputContainer, SearchInput, SearchSubmit, SortContainer, Sort, SortLabel, SortSelectContainer, SortSelect, Separator, PedalList, Pedal, PedalImage, PedalName, PedalType } from "./FilterablePedalList.css";
-import * as utils from "../../utils/utils";
+import { simpleSort } from "../../utils/utils";
 
 export default class FilterablePedalList extends Component {
   constructor(props) {
@@ -26,11 +26,11 @@ export default class FilterablePedalList extends Component {
       let json = await response.json();
 
       if (this.state.sortBy === "model") {
-        json = utils.simpleSort(json, "model", this.state.sortOrder);
+        json = simpleSort(json, "model", this.state.sortOrder);
       } else if (this.state.sortBy === "type") {
-        json = utils.simpleSort(json, "type", this.state.sortOrder);
+        json = simpleSort(json, "type", this.state.sortOrder);
       } else {
-        json = utils.simpleSort(json, "manufacturer", this.state.sortOrder);
+        json = simpleSort(json, "manufacturer", this.state.sortOrder);
       }
 
       for (let entry in json) {
