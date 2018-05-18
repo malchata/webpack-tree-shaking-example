@@ -58,5 +58,8 @@ module.exports = {
       }
     }
   },
-  plugins: plugins
+  plugins: plugins,
+  stats: {
+    excludeAssets: /\.(jpe?g|webp|html?)$/i
+  }
 };
