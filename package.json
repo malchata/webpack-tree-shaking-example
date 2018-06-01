@@ -1,6 +1,7 @@
 {
   "name": "webpack-tree-shaking-example",
   "version": "1.0.0",
+  "sideEffects": false,
   "description": "A toy app demonstrating tree shaking.",
   "main": "index.js",
   "scripts": {
