@@ -38,8 +38,8 @@ export default class FilterablePedalList extends Component {
 
         pedals.push(<Pedal>
           <picture>
-            <source srcset={`/images/${pedal.id}-2x.webp 2x, /images/pedals/${pedal.id}-1x.webp 1x`} type="image/webp"/>
-            <source srcset={`/images/${pedal.id}-2x.jpg 2x, /images/pedals/${pedal.id}-1x.jpg 1x`} type="image/jpeg"/>
+            <source srcset={`/images/${pedal.id}-2x.webp 2x, /images/${pedal.id}-1x.webp 1x`} type="image/webp"/>
+            <source srcset={`/images/${pedal.id}-2x.jpg 2x, /images/${pedal.id}-1x.jpg 1x`} type="image/jpeg"/>
             <PedalImage src={`/images/${pedal.id}-1x.jpg`} alt={`${pedal.manufacturer} ${pedal.model}`} />
           </picture>
           <PedalName>{pedal.manufacturer} {pedal.model}</PedalName>
