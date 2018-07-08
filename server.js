@@ -2,9 +2,11 @@ const path = require("path");
 const express = require("express");
 const app = express();
 const webroot = path.join(__dirname, "dist");
+const images = path.join(__dirname, "src", "images");
 const pedals = require("./api/pedals.json").pedals;
 
 app.use(express.static(webroot));
+app.use("/images", express.static(images));
 app.listen(8080);
 
 app.get("/api/search/:query", (req, res) => {
